@@ -27,7 +27,9 @@ export const CompactRestaurantInfo = ({ restaurant, isMap }) => {
   const Image = isAndroid && isMap ? CompactWebview : CompactImage;
   return (
     <Item>
-      <Image source={{ uri: restaurant.photos[0] }} />
+      <Image
+        source={{ uri: restaurant.photos[0] ? restaurant.photos[0] : null }}
+      />
       <Text center variant="caption" numberOfLines={3}>
         {restaurant.name}
       </Text>
